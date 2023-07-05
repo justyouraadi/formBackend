@@ -2,6 +2,8 @@ const http = require('http');
 const fs = require('fs');
 const url = require('url');
 
+const someData = "done beti";
+
 
 const server = http.createServer((req, res) => {
    const filePath = 'index.html';
@@ -26,7 +28,7 @@ const server = http.createServer((req, res) => {
    }
 
    else if(req.url == "/Submit"){
-    res.end("done beti");
+    res.end(someData);
    }
 
 
@@ -35,4 +37,5 @@ const server = http.createServer((req, res) => {
 const port = 8000;
 server.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
+  console.log(`${someData}`);
 });
